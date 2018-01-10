@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Collections\" />
-    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

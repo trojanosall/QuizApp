@@ -14,6 +14,6 @@ namespace QuizApp.Models
         public bool HalferHelpIsAvailable { get; set; } = true;
         public Question ActualQuestion { get; set; }
         public List<Question> AvailableQuestions { get; set; }
-        public bool IsWon { get; set; }
+        public bool IsWon { get; set; } = false;
     }
 }
