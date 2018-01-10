@@ -16,7 +16,7 @@ namespace QuizApp.Controllers
             QuizAppService = quizAppService;
         }
 
-        [HttpGet] 
+        [HttpGet]
         public IActionResult Index([FromBody] Game game)
         {
             if (game == null)
