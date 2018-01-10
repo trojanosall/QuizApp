@@ -12,8 +12,8 @@ namespace QuizApp.Models
         public bool PhoneHelpIsAvailable { get; set; } = true;
         public bool AudienceHelpIsAvailable { get; set; } = true;
         public bool HalferHelpIsAvailable { get; set; } = true;
-        public Question ActualQuestion { get; set; }
-        public List<Question> AvailableQuestions { get; set; }
+        public Question ActualQuestion { get; set; } = new Question();
+        public List<Question> AvailableQuestions { get; set; } = new List<Question>() { new Question() };
         public bool IsWon { get; set; } = false;
     }
 }

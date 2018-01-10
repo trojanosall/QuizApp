@@ -1,13 +1,19 @@
 ﻿@model QuizApp.Models.Game
 
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Start Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p>Who wants to be a millionare?</p>
+    <p>@Model.PlayerName</p>
+    <p>@Model.ActualQuestion.Text</p>
+    <p>@foreach (var answer in Model.ActualQuestion.Answers)
+    {
+        <p>@answer</p>
+    }
+    </p>
 </body>
 </html>
 
