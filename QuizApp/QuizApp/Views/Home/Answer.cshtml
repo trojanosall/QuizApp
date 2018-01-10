@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>@Model.PlayerName</p>
-    <p>@Model.ActualQuestion.Text</p>
+    <p>@Model.ActualQuestion.TheQuestion</p>
     <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />

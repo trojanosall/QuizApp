@@ -2,19 +2,19 @@
 {
     public class Question
     {
-        public int Id { get; set; } 
-        public string TheQuestion { get; set; } 
+        public int Id { get; set; }
+        public string TheQuestion { get; set; } = "What instrument does Kriszta Csere play?";
 
         /// <summary>
         /// The right answer is always the first one in the array (index 0).
         /// </summary>
-        //public string[] Answers { get; set; } =
-        //    {
-        //    "flute",
-        //    "piano",
-        //    "guitar",
-        //    "shamisen"
-        //    };
+        public string[] Answers { get; set; } =
+            {
+            "flute",
+            "piano",
+            "guitar",
+            "shamisen"
+            };
 
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }
