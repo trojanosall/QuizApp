@@ -9,11 +9,11 @@
         /// The right answer is always the first one in the array (index 0).
         /// </summary>
         public string[] Answers { get; set; } =
-            {
-            "flute",
-            "piano",
-            "guitar",
-            "shamisen"
-            };
+        {
+           "flute",
+           "piano",
+           "guitar",
+           "shamisen"
+        };
     }
 }
