@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using QuizApp.Repositories;
+using QuizApp.Services;
 
 namespace QuizApp
 {
@@ -13,6 +15,9 @@ namespace QuizApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<Models.GameEngine>();
+            services.AddScoped<QuizAppRepository>();
+            services.AddScoped<QuizAppService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
