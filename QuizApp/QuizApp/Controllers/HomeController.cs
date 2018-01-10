@@ -22,5 +22,17 @@ namespace QuizApp.Controllers
             game = new Game();
             return View(game);
         }
+
+        [HttpPost("answer")]
+        public IActionResult Answer(Game game)
+        {
+            return View(game);
+        }
+
+        [HttpPost("question")]
+        public IActionResult Question(Game game)
+        {
+            return View("Index", game);
+        }
     }
 }

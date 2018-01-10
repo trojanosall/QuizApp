@@ -9,7 +9,7 @@
 <body>
     <p>@Model.PlayerName</p>
     <p>@Model.ActualQuestion.Text</p>
-    <form action="answer" method="post">
+    <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
         <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.PhoneHelpIsAvailable" />
@@ -18,11 +18,8 @@
         <input type="hidden" name="ActualQuestion" value="@Model.ActualQuestion" />
         <input type="hidden" name="AvailableQuestions" value="@Model.AvailableQuestions" />
         <input type="hidden" name="IsWon" value="@Model.IsWon" />
-
-        @for (int i = 0; i < Model.ActualQuestion.Answers.Length; i++)
-        {
-            <button class="btn btn-lg active btn-primary" name="@i" type="submit">@Model.ActualQuestion.Answers[i]</button>
-        }
+       
+        <button class="btn btn-lg active btn-primary" name="Continue" type="submit">Continue</button>
     </form>
 </body>
 </html>
