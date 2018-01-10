@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuizApp.Controllers
 {
-    [Route("/")]
+    [Route("")]
     public class AddController : Controller
     {
         QuestionContext QuestionContext;
