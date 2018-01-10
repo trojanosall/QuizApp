@@ -9,11 +9,13 @@
 <body>
     <p>@Model.PlayerName</p>
     <p>@Model.ActualQuestion.Text</p>
-    <p>@foreach (var answer in Model.ActualQuestion.Answers)
-    {
-        <p>@answer</p>
-    }
-    </p>
+    <form action="" method="post">
+        @foreach (var answer in Model.ActualQuestion.Answers)
+        {
+        <input type="hidden" name="Name" value="@answer" />
+        <button id="table" class="btn btn-lg active btn-primary" type="submit">@answer</button>
+        }
+    </form>
 </body>
 </html>
 
