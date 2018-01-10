@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace QuizApp.Models
+﻿namespace QuizApp.Models
 {
     public class Question
     {
@@ -14,11 +9,11 @@ namespace QuizApp.Models
         /// The right answer is always the first one in the array (index 0).
         /// </summary>
         public string[] Answers { get; set; } =
-            {
+        {
            "flute",
            "piano",
            "guitar",
            "shamisen"
-           };
+        };
     }
 }
