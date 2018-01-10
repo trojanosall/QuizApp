@@ -9,21 +9,30 @@ namespace QuizApp.Controllers
     public class HomeController : Controller
     {
         Game game;
-        QuizAppService QuizAppService;
+        QuizAppService service;
 
         public HomeController(QuizAppService quizAppService)
         {
-            QuizAppService = quizAppService;
+            service = quizAppService;
         }
 
         [HttpGet]
-        public IActionResult Index([FromBody] Game game)
-        {
-            if (game == null)
-            {
-                game = new Game();
-            }
+        public IActionResult Index()
+        {           
+            game = new Game();
             return View(game);
+        }
+
+        [HttpPost("answer")]
+        public IActionResult Answer(Game game)
+        {
+            return View(game);
+        }
+
+        [HttpPost("question")]
+        public IActionResult Question(Game game)
+        {
+            return View("Index", game);
         }
     }
 }
