@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuizApp.Controllers
 {
-    [Route("/quiz")]
+    [Route("/")]
     public class AddController : Controller
     {
         QuestionContext QuestionContext;
@@ -28,7 +28,7 @@ namespace QuizApp.Controllers
         [Route("add")]
         public IActionResult Add(string answer1, string answer2, string answer3, string answer4, string question)
         {
-            QuestionContext.Questions.Add(new Question() { Answer1 = answer1, Answer2 = answer2, Answer3 = answer3, Answer4 = answer4, Text = question});
+            QuestionContext.Questions.Add(new Question() { Answer1 = answer1, Answer2 = answer2, Answer3 = answer3, Answer4 = answer4, TheQuestion = question});
             QuestionContext.SaveChanges();
             return RedirectToAction("New");
         }
