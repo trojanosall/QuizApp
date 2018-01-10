@@ -29,7 +29,7 @@ namespace QuizApp.Controllers
         {
             QuestionContext.Questions.Add(new Question() { Answer1 = answer1, Answer2 = answer2, Answer3 = answer3, Answer4 = answer4, TheQuestion = question});
             QuestionContext.SaveChanges();
-            return RedirectToRoute("/quiz/app");
+            return RedirectToRoute("/quiz/add");
         }
     }
 }
