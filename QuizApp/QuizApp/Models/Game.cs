@@ -34,6 +34,8 @@ namespace QuizApp.Models
                 Answer3 = "cook",
                 Answer4 = "officer at agriculture ministry"
             });
+
+            ActualQuestion = AvailableQuestions.Dequeue();
         }
 
         public string PlayerName { get; set; } = "Foxey";

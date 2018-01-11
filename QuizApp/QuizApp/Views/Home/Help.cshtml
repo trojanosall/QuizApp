@@ -3,12 +3,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Answer Page</title>
+    <title>Help Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p>@Model.PlayerName</p>
-    <p>@Model.ActualQuestion.Text</p>
+    <p>Sorry, no help today.</p>
+    
     <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />

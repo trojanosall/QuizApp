@@ -3,7 +3,8 @@
     public class Question
     {
         public int Id { get; set; }
-        public string TheQuestion { get; set; }
+        public string TheQuestion{ get; set; }
+        public string Text { get; set; }
 
         /// <summary>
         /// The right answer is always the first one in the array (index 0).

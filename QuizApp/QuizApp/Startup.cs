@@ -34,12 +34,12 @@ namespace QuizApp
         {
             loggerFactory.AddConsole();
 
-            app.UseMvcWithDefaultRoute();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {

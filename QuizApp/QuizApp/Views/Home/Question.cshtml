@@ -3,14 +3,20 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Start Page</title>
+    <title>Question Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+    <form action="help" method="post">
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.PhoneHelpIsAvailable" />
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.AudienceHelpIsAvailable" />
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.HalferHelpIsAvailable" />
+
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="1" type="submit">Phone</button>
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="2" type="submit">Audience</button>
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="3" type="submit">Halfer</button>
+    </form>
     <p>@Model.PlayerName</p>
-    @{
-        Model.ActualQuestion = Model.AvailableQuestions.ElementAt(0);
-    }
     <p>@Model.ActualQuestion.Text</p>
     <form action="answer" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
