@@ -51,3 +51,8 @@ button#help-buttons{
     float: right;
     margin-right: 4px;
 }
+
+#alone {
+    width: 50%;
+    margin-left: 22.5%;
+}
