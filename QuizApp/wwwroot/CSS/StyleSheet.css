@@ -1,0 +1,47 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+body {
+    /*background-image: url('foxinverse2.jpg');*/
+    background-image: url('foxBG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 17%;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+p {
+    color: rgb(75,255,164);
+}
+
+    p:first-of-type {
+        text-align: center;
+        width: 100%;
+    }
+
+    p:last-of-type {
+        font-size: 48px;
+        text-align: center;
+        width: 100%;
+    }
+
+form {
+    padding-left: 4%;
+}
+
+button {
+    border-radius: 7px;
+    background-color: rgb(75,255,164);
+    width: 47%;
+    align-items: center;
+    margin-top: 4%;
+    padding: 1%;
+}
