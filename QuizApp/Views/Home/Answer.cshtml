@@ -10,7 +10,7 @@
 <body>
     <p>@Model.PlayerName</p>
     <p>@Model.ActualQuestion.Text</p>
-    <p>@Model.ActualQuestion.Answer1</p>
+    <p>Well done! The correct answer is: @Model.ActualQuestion.Answer1</p>
     <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
