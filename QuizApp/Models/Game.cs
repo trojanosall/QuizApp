@@ -316,6 +316,6 @@ namespace QuizApp.Models
         public bool IsWon { get; set; } = false;
         public bool IsOver { get; set; } = false;
         public int PhoneHelpResult { get; set; }
-        public int AudienceHelpResult { get; internal set; }
+        public int AudienceHelpResult { get; set; }
     }
 }
