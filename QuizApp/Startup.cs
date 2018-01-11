@@ -40,7 +40,7 @@ namespace QuizApp
             }
 
             app.UseMvcWithDefaultRoute();
-            
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
