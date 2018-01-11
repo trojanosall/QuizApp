@@ -1,0 +1,38 @@
+﻿@model QuizApp.Models.Game
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Question Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="help" method="post">
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.PhoneHelpIsAvailable" />
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.AudienceHelpIsAvailable" />
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.HalferHelpIsAvailable" />
+
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="1" type="submit">Phone</button>
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="2" type="submit">Audience</button>
+        <button class="btn btn-lg active btn-primary" name="chosenHelper" value="3" type="submit">Halfer</button>
+    </form>
+    <p>@Model.PlayerName</p>
+    <p>@Model.ActualQuestion.Text</p>
+    <form action="answer" method="post">
+        <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
+        <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
+        <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.PhoneHelpIsAvailable" />
+        <input type="hidden" name="AudienceHelpIsAvailable" value="@Model.AudienceHelpIsAvailable" />
+        <input type="hidden" name="HalferHelpIsAvailable" value="@Model.HalferHelpIsAvailable" />
+        <input type="hidden" name="ActualQuestion" value="@Model.ActualQuestion" />
+        <input type="hidden" name="AvailableQuestions" value="@Model.AvailableQuestions" />
+        <input type="hidden" name="IsWon" value="@Model.IsWon" />
+
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="1" type="submit">@Model.ActualQuestion.Answer1</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="2" type="submit">@Model.ActualQuestion.Answer2</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="3" type="submit">@Model.ActualQuestion.Answer3</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="4" type="submit">@Model.ActualQuestion.Answer4</button>
+    </form>
+</body>
+</html>
+

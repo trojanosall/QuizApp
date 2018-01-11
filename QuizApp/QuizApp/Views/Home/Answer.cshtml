@@ -3,12 +3,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Start Page</title>
+    <title>Answer Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     <p>@Model.PlayerName</p>
-    <p>@Model.ActualQuestion.TheQuestion</p>
+    <p>@Model.ActualQuestion.Text</p>
     <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
@@ -18,9 +18,8 @@
         <input type="hidden" name="ActualQuestion" value="@Model.ActualQuestion" />
         <input type="hidden" name="AvailableQuestions" value="@Model.AvailableQuestions" />
         <input type="hidden" name="IsWon" value="@Model.IsWon" />
-       
-        <button class="btn btn-lg active btn-primary" name="Continue" type="submit">Continue</button>
+
+        <button class="btn btn-lg active btn-primary" name="Continue" value="Game" type="submit">Continue</button>
     </form>
 </body>
 </html>
-

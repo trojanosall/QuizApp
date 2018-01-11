@@ -24,7 +24,6 @@ namespace QuizApp
 
             Configuration = builder.Build();
             services.AddMvc();
-            services.AddScoped<Models.GameEngine>();
             services.AddScoped<QuizAppRepository>();
             services.AddScoped<QuizAppService>();
             services.AddDbContext<QuestionContext>(options => options.UseSqlServer(Configuration["ConnectionString:QuestionConnection"]));
@@ -35,12 +34,12 @@ namespace QuizApp
         {
             loggerFactory.AddConsole();
 
-            app.UseMvcWithDefaultRoute();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {

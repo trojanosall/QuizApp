@@ -3,13 +3,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Start Page</title>
+    <title>Help Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p>@Model.PlayerName</p>
-    <p>@Model.ActualQuestion.TheQuestion</p>
-    <form action="answer" method="post">
+    <p>Sorry, no help today.</p>
+    
+    <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
         <input type="hidden" name="PhoneHelpIsAvailable" value="@Model.PhoneHelpIsAvailable" />
@@ -20,10 +20,14 @@
         <input type="hidden" name="IsWon" value="@Model.IsWon" />
         <input type="hidden" name="Answers" value="@Model.ActualQuestion.Answers" />
 
+<<<<<<< HEAD:QuizApp/QuizApp/Views/Home/Index.cshtml
         @for (int i = 0; i < Model.ActualQuestion.Answers.Length; i++)
         {
             <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="@i" type="submit">@Model.ActualQuestion.Answers[i]</button>
         }
+=======
+        <button class="btn btn-lg active btn-primary" name="Continue" value="Game" type="submit">Continue</button>
+>>>>>>> 282454279efb615f8f5b79e2727e08c25deedea7:QuizApp/QuizApp/Views/Home/Help.cshtml
     </form>
 </body>
 </html>

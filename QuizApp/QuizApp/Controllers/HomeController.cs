@@ -11,44 +11,29 @@ namespace QuizApp.Controllers
         Game game;
         QuizAppService service;
 
-        public HomeController(QuizAppService quizAppService)
-        {
-            service = quizAppService;
-        }
+        public HomeController(QuizAppService quizAppService) => service = quizAppService;
 
         [HttpGet]
         public IActionResult Index()
         {
             game = new Game();
-            return View(game);
+            return View("Question", game);
         }
 
         [HttpPost("answer")]
-        public IActionResult Answer(Game game)
-        {
-            string seqStringOfChoosenAnswer;
-            if (Request.Form.ContainsKey("chosenAnswer"))
-            {
-                seqStringOfChoosenAnswer = Request.Form["chosenAnswer"];
-                int seqIntOfChoosenAnswer = int.Parse(seqStringOfChoosenAnswer);
-            }
+        public IActionResult Answer(Game game) => View(game);
 
-
-
-            //    TryGetValue("chosenAnswer", out numiu)
-            //if (Request.Form.Keys.Contains("chosenAnswer"))
-            //{
-            //    string a = Request.Form.Keys["chosenAnswer"];
-
-            //}
-            //string k = Request.Form[key];
-            return View(game);
-        }
 
         [HttpPost("question")]
         public IActionResult Question(Game game)
+        {          
+            return View(game);
+        }
+
+        [HttpPost("help")]
+        public IActionResult Help(Game game)
         {
-            return View("Index", game);
+            return View(game);
         }
     }
 }
