@@ -8,20 +8,17 @@
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/StyleSheet.css")" />
 </head>
 <body>
-    <p>@Model.PlayerName</p>
+    <p>Hello, @Model.PlayerName</p>
+    <p>Your actual level of Foxiness: @(Model.LevelAchieved + 1)</p>
     <p>@Model.ActualQuestion.Text</p>
 
     @if (Model.AudienceHelpResult > 0)
     {
-        <p>
-            The audience suggests the answer #@Model.AudienceHelpResult
-        </p>
+        <p>The audience suggests the answer #@Model.AudienceHelpResult</p>
     }
     @if (Model.PhoneHelpResult > 0)
     {
-        <p>
-            Your buddy suggests the answer #@Model.PhoneHelpResult
-        </p>
+        <p>Your buddies on the phone suggest the answer #@Model.PhoneHelpResult</p>
     }
 
     <form action="answer" method="post">
@@ -38,9 +35,10 @@
             }
         </div>
     </form>
+
     <form action="help" method="post">
         <div class="help-buttons">
-            <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.PhoneHelpIsAvailable ? "" : "disabled") value="Phone" type="submit">Phone</button>
+            <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.PhoneHelpIsAvailable ? "" : "disabled") value="Phone" type="submit">Phone-a-Friend</button>
             <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.AudienceHelpIsAvailable ? "" : "disabled") value="Audience" type="submit">Audience</button>
             <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.HalferHelpIsAvailable ? "" : "disabled") value="Halfer" type="submit">Halfer</button>
         </div>
