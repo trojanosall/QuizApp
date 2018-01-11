@@ -258,14 +258,6 @@ namespace QuizApp.Models
             },
             new Question()
             {
-                Text = "Did Balazs Korbuly buy bitcoin?",
-                Answer1 = "74",
-                Answer2 = "0",
-                Answer3 = "1400",
-                Answer4 = "12"
-            },
-            new Question()
-            {
                 Text = "What was Gergo Toth’s kindergarten sign?",
                 Answer1 = "domino",
                 Answer2 = "laser sword",
