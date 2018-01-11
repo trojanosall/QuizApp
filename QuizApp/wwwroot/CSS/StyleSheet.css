@@ -60,3 +60,8 @@ button#help-buttons{
 button#help-buttons:disabled {
     background-color: rgba(169,169,169, 0.4);
 }
+
+button:hover {
+    background-color: rgba(75,255,164, 0.4);
+    transition: 1s;
+}
