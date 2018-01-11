@@ -9,7 +9,6 @@
 }
 
 body {
-    /*background-image: url('foxinverse2.jpg');*/
     background-image: url('foxBG.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,8 +37,22 @@ button {
     border-radius: 7px;
     background-color: rgb(75,255,164);
     width: 47%;
-    align-items: center;
+    text-align: center;
     margin-top: 4%;
     padding: 1%;
     font-size: 32px;
+}
+
+
+button#help-buttons {
+    width: 27%;
+    font-size: 18px;
+    border-radius: 7px;
+    display: inline-block;
+    background-color: darkgrey;
+    padding-left: 24%;
+}
+
+#single{
+    padding-left: 28%;
 }
