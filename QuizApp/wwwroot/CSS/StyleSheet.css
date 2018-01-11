@@ -3,7 +3,7 @@
     padding: 0;
     border: 0;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 48px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
 }
@@ -20,18 +20,15 @@ body {
 
 p {
     color: rgb(75,255,164);
+    text-align: center;
+    width: 100%;
 }
 
     p:first-of-type {
-        text-align: center;
-        width: 100%;
+        font-size: 32px;
     }
 
-    p:last-of-type {
-        font-size: 48px;
-        text-align: center;
-        width: 100%;
-    }
+
 
 form {
     padding-left: 4%;
@@ -44,4 +41,5 @@ button {
     align-items: center;
     margin-top: 4%;
     padding: 1%;
+    font-size: 32px;
 }
