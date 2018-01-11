@@ -266,7 +266,7 @@ namespace QuizApp.Models
             },
             new Question()
             {
-                Text = "What was Gergo Thot’s kindergarten sign?",
+                Text = "What was Gergo Toth’s kindergarten sign?",
                 Answer1 = "domino",
                 Answer2 = "laser sword",
                 Answer3 = "were-wolf",
@@ -315,5 +315,7 @@ namespace QuizApp.Models
         };
         public bool IsWon { get; set; } = false;
         public bool IsOver { get; set; } = false;
+        public int PhoneHelpResult { get; set; }
+        public int AudienceHelpResult { get; internal set; }
     }
 }

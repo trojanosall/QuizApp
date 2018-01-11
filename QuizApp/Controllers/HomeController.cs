@@ -22,6 +22,15 @@ namespace QuizApp.Controllers
             return View("Question", game);
         }
 
+        [HttpPost("question")]
+        public IActionResult Question()
+        {
+            Game game = service.Load();
+            game.ActualQuestion = game.QuestionsToBeAsked.Dequeue();
+            service.Save(game);
+            return View(game);
+        }
+
         [HttpPost("answer")]
         public IActionResult Answer()
         {
@@ -31,6 +40,8 @@ namespace QuizApp.Controllers
             if (game.RightAnswerIsChosen)
             {
                 game.LevelAchieved++;
+                game.AudienceHelpResult = 0;
+                game.PhoneHelpResult = 0;
             }
             else
             {
@@ -51,13 +62,36 @@ namespace QuizApp.Controllers
             return View(game);
         }
 
-        [HttpPost("question")]
-        public IActionResult Question()
+        [HttpPost("help")]
+        public IActionResult HelpAsked()
         {
             Game game = service.Load();
-            game.ActualQuestion = game.QuestionsToBeAsked.Dequeue();
+            Random random = new Random();
+            int maxRandomValue;
+
+            switch (Request.Form["chosenHelper"])
+            {
+                case "Phone":
+                    game.PhoneHelpIsAvailable = false;
+                    maxRandomValue = String.IsNullOrEmpty(game.ActualQuestion.Answer4) ? 2 : 4;
+                    game.PhoneHelpResult = random.Next(1, maxRandomValue);
+                    break;
+                case "Audience":
+                    game.AudienceHelpIsAvailable = false;
+                    maxRandomValue = String.IsNullOrEmpty(game.ActualQuestion.Answer4) ? 2 : 4;
+                    game.AudienceHelpResult = random.Next(1, maxRandomValue);
+                    break;
+                case "Halfer":
+                    game.HalferHelpIsAvailable = false;
+                    game.ActualQuestion.Answer3 = String.Empty;
+                    game.ActualQuestion.Answer4 = String.Empty;
+                    break;
+                default:
+                    break;
+            }
+
             service.Save(game);
-            return View(game);
+            return View("Question", game);
         }
     }
 }

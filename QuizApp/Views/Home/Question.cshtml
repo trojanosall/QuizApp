@@ -10,12 +10,40 @@
 <body>
     <p>@Model.PlayerName</p>
     <p>@Model.ActualQuestion.Text</p>
+
+    @if (Model.AudienceHelpResult > 0)
+    {
+        <p>
+            The audience suggests the answer #@Model.AudienceHelpResult
+        </p>
+    }
+    @if (Model.PhoneHelpResult > 0)
+    {
+        <p>
+            Your buddy suggests the answer #@Model.PhoneHelpResult
+        </p>
+    }
+
     <form action="answer" method="post">
-        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="1" type="submit">@Model.ActualQuestion.Answer1</button>
-        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="2" type="submit">@Model.ActualQuestion.Answer2</button>
-        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="3" type="submit">@Model.ActualQuestion.Answer3</button>
-        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="4" type="submit">@Model.ActualQuestion.Answer4</button>
+        <div class="answer-buttons">
+            <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="1" type="submit">@Model.ActualQuestion.Answer1</button>
+            <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="2" type="submit">@Model.ActualQuestion.Answer2</button>
+            @if (!String.IsNullOrEmpty(@Model.ActualQuestion.Answer3))
+            {
+                <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="3" type="submit">@Model.ActualQuestion.Answer3</button>
+            }
+            @if (!String.IsNullOrEmpty(@Model.ActualQuestion.Answer4))
+            {
+                <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="4" type="submit">@Model.ActualQuestion.Answer4</button>
+            }
+        </div>
+    </form>
+    <form action="help" method="post">
+        <div class="help-buttons">
+            <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.PhoneHelpIsAvailable ? "" : "disabled") value="Phone" type="submit">Phone</button>
+            <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.AudienceHelpIsAvailable ? "" : "disabled") value="Audience" type="submit">Audience</button>
+            <button class="btn btn-lg active btn-primary" name="chosenHelper" @(Model.HalferHelpIsAvailable ? "" : "disabled") value="Halfer" type="submit">Halfer</button>
+        </div>
     </form>
 </body>
 </html>
-
