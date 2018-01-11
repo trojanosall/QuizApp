@@ -1,0 +1,20 @@
+﻿@model QuizApp.Models.Game
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>@Model.PlayerName</p>
+    <p>@Model.ActualQuestion.Text</p>
+    <form action="answer" method="post">
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="1" type="submit">@Model.ActualQuestion.Answer1</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="2" type="submit">@Model.ActualQuestion.Answer2</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="3" type="submit">@Model.ActualQuestion.Answer3</button>
+        <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="4" type="submit">@Model.ActualQuestion.Answer4</button>
+    </form>
+</body>
+</html>
+

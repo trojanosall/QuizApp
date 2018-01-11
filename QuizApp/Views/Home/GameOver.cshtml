@@ -1,0 +1,22 @@
+﻿@model QuizApp.Models.Game
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Game Is Over</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>@Model.PlayerName</h1>
+
+    @if(@Model.IsWon)
+    {
+    <p>Congratulation, You have won zillions of Foxes in Bank of Symba.</p>
+    }
+    else
+    {
+    <p>We are deeply sorry, You have won only a pleasant experience.</p>
+    }
+
+</body>
+</html>

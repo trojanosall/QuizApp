@@ -1,14 +1,15 @@
-﻿﻿@model QuizApp.Models.Game
+﻿@model QuizApp.Models.Game
 
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Help Page</title>
+    <title>Answer Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p>Sorry, no help today.</p>
-    
+    <p>@Model.PlayerName</p>
+    <p>@Model.ActualQuestion.Text</p>
+    <p>@Model.ActualQuestion.Answer1</p>
     <form action="question" method="post">
         <input type="hidden" name="PlayerName" value="@Model.PlayerName" />
         <input type="hidden" name="LevelAchieved" value="@Model.LevelAchieved" />
@@ -18,16 +19,8 @@
         <input type="hidden" name="ActualQuestion" value="@Model.ActualQuestion" />
         <input type="hidden" name="AvailableQuestions" value="@Model.AvailableQuestions" />
         <input type="hidden" name="IsWon" value="@Model.IsWon" />
-        <input type="hidden" name="Answers" value="@Model.ActualQuestion.Answers" />
 
-<<<<<<< HEAD:QuizApp/QuizApp/Views/Home/Index.cshtml
-        @for (int i = 0; i < Model.ActualQuestion.Answers.Length; i++)
-        {
-            <button class="btn btn-lg active btn-primary" name="chosenAnswer" value="@i" type="submit">@Model.ActualQuestion.Answers[i]</button>
-        }
-=======
-        <button class="btn btn-lg active btn-primary" name="Continue" value="Game" type="submit">Continue</button>
->>>>>>> 282454279efb615f8f5b79e2727e08c25deedea7:QuizApp/QuizApp/Views/Home/Help.cshtml
+        <button class="btn btn-lg active btn-primary" name="Continue" value="hello" type="submit">Continue</button>
     </form>
 </body>
 </html>
