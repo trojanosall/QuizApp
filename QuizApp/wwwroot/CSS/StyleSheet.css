@@ -56,3 +56,7 @@ button#help-buttons{
     width: 50%;
     margin-left: 22.5%;
 }
+
+button#help-buttons:disabled {
+    background-color: rgba(169,169,169, 0.4);
+}
