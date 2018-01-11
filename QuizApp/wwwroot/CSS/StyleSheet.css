@@ -43,3 +43,16 @@ button {
     padding: 1%;
     font-size: 32px;
 }
+
+button#help-buttons{
+    width: 150px;
+    font-size: 16px;
+    background-color: darkgray;
+    float: right;
+    margin-right: 4px;
+}
+
+#alone {
+    width: 50%;
+    margin-left: 22.5%;
+}
