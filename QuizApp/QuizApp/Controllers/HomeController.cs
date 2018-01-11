@@ -28,11 +28,5 @@ namespace QuizApp.Controllers
         {          
             return View(game);
         }
-
-        [HttpPost("help")]
-        public IActionResult Help(Game game)
-        {
-            return View(game);
-        }
     }
 }
