@@ -18,7 +18,7 @@ namespace QuizApp.Controllers
 
         [HttpGet]
         public IActionResult Index()
-        {           
+        {
             game = new Game();
             return View(game);
         }
@@ -26,6 +26,22 @@ namespace QuizApp.Controllers
         [HttpPost("answer")]
         public IActionResult Answer(Game game)
         {
+            string seqStringOfChoosenAnswer;
+            if (Request.Form.ContainsKey("chosenAnswer"))
+            {
+                seqStringOfChoosenAnswer = Request.Form["chosenAnswer"];
+                int seqIntOfChoosenAnswer = int.Parse(seqStringOfChoosenAnswer);
+            }
+
+
+
+            //    TryGetValue("chosenAnswer", out numiu)
+            //if (Request.Form.Keys.Contains("chosenAnswer"))
+            //{
+            //    string a = Request.Form.Keys["chosenAnswer"];
+
+            //}
+            //string k = Request.Form[key];
             return View(game);
         }
 
